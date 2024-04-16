@@ -1,0 +1,48 @@
+.page-div {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(100, 167, 238);
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.form-style {
+    width: 70%;
+    max-width: 400px; /* Adjust max-width as needed */
+    margin: 0 auto;
+    height: 50%;
+    transform: translateY(50%);
+}
+
+.form-style label,
+.form-style input {
+    display: block;
+    margin-bottom: 10px; /* Adjust spacing between label and input */
+}
+
+.form-style label {
+    font-weight: bold;
+}
+
+.form-style input[type="text"],
+.form-style input[type="email"],
+.form-style input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-style input[type="submit"] {
+    background-color: #007bff; /* Adjust button color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-style input[type="submit"]:hover {
+    background-color: #0056b3; /* Adjust hover color */
+}

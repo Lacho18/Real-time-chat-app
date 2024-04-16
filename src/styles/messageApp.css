@@ -1,0 +1,109 @@
+.all-users-div {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 5px solid black;
+    width: 15%;
+    margin: 5px;
+}
+
+.single-user {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    padding: 1px;
+    border-bottom: 5px solid black;
+}
+
+.single-user > img {
+    width: 30%;
+    height: 100%;
+}
+
+.single-user > p {
+    font-size: 1.25em;
+    text-align: center;
+    margin-left: 30px;
+}
+
+.main-app-div {
+    border: 5px solid black;
+    border-radius: 18px;
+    width: 50%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Messages window styling */
+.messages-app-div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-image: linear-gradient(to right, blue, purple);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.messages-header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    height: 12%;
+    border-bottom:  5px solid black;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: black;
+}
+
+.messages-header > img {
+    width: 10%;
+    height: 100%;
+    background-color: white;
+    margin: 3px;
+    border-radius: 50%;
+    margin-left: 30px;
+}
+
+.messages-header > p {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 70px;
+    margin-top: 0px;
+    padding-top: 15px;
+    color: white;
+}
+
+.main-section {
+    display: inline-block;
+    height: 73%;
+}
+
+.messages-footer {
+    display: flex;
+    height: 15%;
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    background-color: rgba(100, 167, 238, 0.8);;
+}
+
+.messages-footer > input {
+    margin: 25px;
+    width: 70%;
+    padding: 5px;
+    border-radius: 18px;
+    font-size: 1.40em;
+    padding-left: 3px;
+}
+
+.messages-footer > button {
+    font-size: 2.25em;
+    margin: 10px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
