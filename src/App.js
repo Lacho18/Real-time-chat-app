@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from "react";
 import { Link, Route, Router, Routes } from 'react-router-dom';
@@ -42,7 +41,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className='page-div'>
       <Routes>
         <Route path='/' element={<NavMenu />} />
         <Route path='/user'>
@@ -51,10 +50,6 @@ function App() {
         </Route>
         <Route path='/messages' element={<MessageApp user={user} />} />
       </Routes>
-
-      <div>
-
-      </div>
     </div>
   );
 }

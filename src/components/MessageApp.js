@@ -45,7 +45,8 @@ export default function MessageApp(props) {
                 <p>Welcome {props.user.username}</p>
 
                 <div className="main-app-div">
-                    {currentChat !== "" ? <MessagesWindow currentUser={props.user.username} chatWith={currentChat} /> : <p>Select user to chat with</p>}
+                    {currentChat !== "" ? <MessagesWindow currentUser={props.user.username} chatWith={currentChat} />
+                        : <div className="not-selected-user-window"><p>Select user to chat with</p></div>}
                 </div>
 
                 <div className="all-users-div">
@@ -63,7 +64,7 @@ export default function MessageApp(props) {
 
         return (
             <div className="page-div">
-                <div>
+                <div className="not-login-div">
                     <p>Please log in to your account</p>
                     <Link to="/user/login">Log in</Link>
                 </div>

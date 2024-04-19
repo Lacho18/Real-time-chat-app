@@ -1,3 +1,16 @@
+.not-login-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.not-login-div > * {
+    font-size: 1.75vmax;
+    text-align: center;
+    font-weight: bold;
+}
+
 .all-users-div {
     position: absolute;
     right: 0;
@@ -106,4 +119,20 @@
     padding: 0;
     background-color: transparent;
     border: none;
+}
+
+.not-selected-user-window {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(49, 49, 132);
+    border-radius: 12px;
+}
+
+.not-selected-user-window > p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    font-size: 3em;
+    text-align: center;
 }
