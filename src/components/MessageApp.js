@@ -9,7 +9,7 @@ export default function MessageApp(props) {
     const [currentChat, setCurrentChat] = useState("");
 
     useEffect(() => {
-        //Function that sends request to get all users in the database
+        //Function that sends request to get all users in the database. This is the data displayed on the right side
         async function getAllUsers() {
             const response = await fetch("http://localhost:8000/getAllUsers/?notUser=" + props.user.username, {
                 method: "GET",
