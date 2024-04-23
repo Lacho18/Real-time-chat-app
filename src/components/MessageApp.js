@@ -42,7 +42,7 @@ export default function MessageApp(props) {
         //Structure that renders if the user has logged in
         return (
             <div className="page-div">
-                <p>Welcome {props.user.username}</p>
+                <p id="welcomeText">Welcome {props.user.username}</p>
 
                 <div className="main-app-div">
                     {currentChat !== "" ? <MessagesWindow currentUser={props.user.username} chatWith={currentChat} />
@@ -51,7 +51,7 @@ export default function MessageApp(props) {
 
                 <div className="all-users-div">
                     {allUsers.map(indexValue => {
-                        return (<div className="single-user" onClick={() => { selectUserHandler(indexValue.username) }}>
+                        return (<div key={indexValue.username} className="single-user" onClick={() => { selectUserHandler(indexValue.username) }}>
                             <img src="https://www.svgrepo.com/show/46297/male-user-shadow.svg" alt="User image" />
                             <p>{indexValue ? indexValue.username : ""}</p>
                         </div>)

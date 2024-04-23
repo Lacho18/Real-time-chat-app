@@ -43,7 +43,7 @@ export default function Login(props) {
 
     return (
         <div className="page-div login-div">
-            {responseMessage !== "" && <p id="responseLogIn">{responseMessage}</p>}
+            {responseMessage !== "" && <p id="responseLogIn" className="error-message">{responseMessage}</p>}
             <form className="form-style" onSubmit={submitHandler}>
                 <label htmlFor="username">Enter your username</label>
                 <input type="text" name="username" onChange={changeHandler} />

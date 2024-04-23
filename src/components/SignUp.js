@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 export default function SignUp() {
+    const navigate = useNavigate();
     const [userData, setUserData] = useState({
         username: "",
         password: "",
@@ -29,12 +31,18 @@ export default function SignUp() {
         if (responseData) {
             console.log(responseData.message);
             setResponseMessage(responseData.message);
+
+            setTimeout(() => {
+                if (responseData.message === "User created!") {
+                    navigate('/');
+                }
+            }, 3000);
         }
     }
 
     return (
         <div className="page-div">
-            {responseMessage !== "" && <p>{responseMessage}</p>}
+            {responseMessage !== "" && <p className="error-message">{responseMessage}</p>}
             <form className="form-style" onSubmit={submitHandler}>
                 <label htmlFor="username">Enter username</label>
                 <input onChange={changeHandle} type="text" name="username" />

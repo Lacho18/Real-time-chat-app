@@ -73,3 +73,10 @@
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
 }
+
+.error-message { 
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    position: absolute;
+}
