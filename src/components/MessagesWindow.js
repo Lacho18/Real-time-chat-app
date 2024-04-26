@@ -46,14 +46,9 @@ export default function MessagesWindow(props) {
         }
 
         fetchData();
-        //Creates a web socket in order to receive data from the server in real time
-        const socket = new WebSocket('ws://localhost:8080');
-        socket.onopen = () => {
-            console.log('Websocket connection established');
-        }
 
         //function that is called when data is send with this web socket
-        socket.onmessage = (event) => {
+        props.webSocket.onmessage = (event) => {
             const newData = JSON.parse(event.data);
             console.log('Received new data from WebSocket:', newData);
             //Adds the new data to already existing array that visualize the messages
@@ -62,11 +57,6 @@ export default function MessagesWindow(props) {
                 newArrayData.push(newData);
                 return newArrayData;
             });
-        };
-
-        return () => {
-            // Clean up WebSocket connection on component unmount
-            socket.close();
         };
     }, [props.chatWith])
 

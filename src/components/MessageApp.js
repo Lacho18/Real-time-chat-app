@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/messageApp.css";
 
@@ -7,6 +7,7 @@ import MessagesWindow from "./MessagesWindow";
 export default function MessageApp(props) {
     const [allUsers, setAllUsers] = useState([]);
     const [currentChat, setCurrentChat] = useState("");
+    const socket = useRef(null);
 
     useEffect(() => {
         //Function that sends request to get all users in the database. This is the data displayed on the right side
@@ -24,11 +25,27 @@ export default function MessageApp(props) {
             if (responseData) {
                 setAllUsers(responseData.allUsers);
             }
+
+            //Creates a web socket in order to receive data from the server in real time. The socket is inside useRef() variable
+            socket.current = new WebSocket('ws://localhost:8080');
+            socket.current.onopen = () => {
+                console.log('Websocket connection established');
+                const dataToSendWebSocket = {
+                    data: props.user.username
+                }
+                socket.current.send(JSON.stringify(dataToSendWebSocket));
+            }
         }
 
         //Checks if the user has logged in
         if (props.user.username) {
-            getAllUsers();
+            getAllUsers()
+        }
+
+        return () => {
+            if (props.user.username) {
+                socket.current.close();
+            }
         }
     }, [])
 
@@ -45,7 +62,7 @@ export default function MessageApp(props) {
                 <p id="welcomeText">Welcome {props.user.username}</p>
 
                 <div className="main-app-div">
-                    {currentChat !== "" ? <MessagesWindow currentUser={props.user.username} chatWith={currentChat} />
+                    {currentChat !== "" ? <MessagesWindow currentUser={props.user.username} chatWith={currentChat} webSocket={socket.current} />
                         : <div className="not-selected-user-window"><p>Select user to chat with</p></div>}
                 </div>
 

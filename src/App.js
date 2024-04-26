@@ -16,30 +16,6 @@ function App() {
     setUser(userData);
   }
 
-  useEffect(() => {
-    function insideUseEffect() {
-      fetch("http://localhost:8000/test", {
-        method: "GET",
-        headers: {
-          'Content-type': 'application/json'
-        }
-      })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then(responseData => {
-          console.log(responseData.message);
-        })
-        .catch(error => {
-          console.error('Error fetching data:', error);
-        });
-    }
-    insideUseEffect();
-  }, []);
-
   return (
     <div className='page-div'>
       <Routes>
