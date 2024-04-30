@@ -69,5 +69,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-Real-time-chat-app
-A real time chat application with react and MongoDB as data base A real time chat application using react for building the graphical user interface and node.js, express.js and MongoDB on the server side for collecting the data and handle the requests.
+---
+
+# Real-time-chat-app
+
+A real time chat application with react and MongoDB as data base A real time chat application using react for building the graphical user interface and Node.js, Express.js and MongoDB on the server side for collecting the data and handle the requests. The app presents a graphical user interface to a chat application. The user is able to chat with every registered user in the app. Sending the message is immediately visible due to technologies like WebSocket server andMongoDB change streams on the backend.
